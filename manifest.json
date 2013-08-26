@@ -1,0 +1,14 @@
+{
+ "name": "Rest Extension",
+ "description": "Set an Artnet Controler to the background collor",
+ "manifest_version": 2,
+ "version": "1",
+ "permissions": ["tabs", "http://*/*", "https://*/*", "background", "alarms"],
+ "background": {"scripts": ["background.js"]},
+ "content_scripts": [{"matches": ["http://*/*", "https://*/*"],"js": ["inject.js"]}],
+ "browser_action": 
+	{
+		"default_icon": "16x16.png",
+		"default_popup": "popup.html"
+	}
+}

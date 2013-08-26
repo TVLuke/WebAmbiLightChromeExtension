@@ -39,7 +39,7 @@ chrome.windows.onFocusChanged.addListener(function()
 {
     chrome.tabs.getCurrent(function(ctab)
     {
-		if(ctab!="undefined")
+		if(typeof  ctab!='undefined')
 		{
 			chrome.tabs.executeScript(ctab.id, { file: "inject.js" });
 		}
@@ -186,7 +186,7 @@ function onAlarm(alarm)
 		{
 			chrome.tabs.getCurrent(function(ctab)
 			{
-				if(ctab!="undefined")
+				if(typeof  ctab!='undefined')
 				{
 					chrome.tabs.executeScript(ctab.id, { file: "inject.js" });
 				}

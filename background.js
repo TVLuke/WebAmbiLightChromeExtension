@@ -37,13 +37,17 @@ chrome.windows.onRemoved.addListener(function(windowId)
 
 chrome.windows.onFocusChanged.addListener(function() 
 {
-    chrome.tabs.getCurrent(function(ctab)
-    {
-		if(typeof  ctab!='undefined')
+		try
 		{
-			chrome.tabs.executeScript(ctab.id, { file: "inject.js" });
-		}
-    });
+			chrome.tabs.getCurrent(function(ctab)
+			{
+				chrome.tabs.executeScript(ctab.id, { file: "inject.js" });
+			});
+		} 
+		catch (e)
+		{
+			
+		}	
 });
 
 
@@ -181,15 +185,11 @@ function onAlarm(alarm)
 {
   	if (alarm && alarm.name == 'checkcolor') 
 	{
-		console.log("checkcolor");
 		try
 		{
 			chrome.tabs.getCurrent(function(ctab)
 			{
-				if(typeof  ctab!='undefined')
-				{
-					chrome.tabs.executeScript(ctab.id, { file: "inject.js" });
-				}
+				chrome.tabs.executeScript(ctab.id, { file: "inject.js" });
 			});
 		} 
 		catch (e)

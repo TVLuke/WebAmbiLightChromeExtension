@@ -1,6 +1,6 @@
 {
- "name": "Rest Extension",
- "description": "Set an Artnet Controler to the background collor",
+ "name": "Web Ambilight",
+ "description": "Set the light to the background color of the website",
  "manifest_version": 2,
  "version": "1",
  "permissions": ["tabs", "http://*/*", "https://*/*", "background", "alarms"],
